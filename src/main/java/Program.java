@@ -16,7 +16,9 @@ public class Program {
 //        Department department = new Department("Language AI");
 //        System.out.println(departmentController.createDepartment(department));
 
-        Department departmentUpdate = new Department("Bixby");
-        System.out.println(departmentController.updateDepartment(12, departmentUpdate));
+//        Department departmentUpdate = new Department("Bixby");
+//        System.out.println(departmentController.updateDepartment(12, departmentUpdate));
+
+        System.out.println(departmentController.deleteDepartment(5));
     }
 }

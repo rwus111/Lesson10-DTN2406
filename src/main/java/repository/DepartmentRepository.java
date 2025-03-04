@@ -76,4 +76,18 @@ public class DepartmentRepository implements IDepartmentRepository {
         }
         return false;
     }
+
+    @Override
+    public boolean deleteDepartment(int id) {
+        String sql = "DELETE FROM Department WHERE DepartmentId = ?";
+        try (Connection connection = JDBCUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            int row = preparedStatement.executeUpdate();
+            return row > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

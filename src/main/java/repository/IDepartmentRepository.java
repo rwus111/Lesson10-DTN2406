@@ -9,4 +9,5 @@ public interface IDepartmentRepository {
     Department getDepartmentById(int id);
     boolean createDepartment(Department department);
     boolean updateDepartment(Department department);
+    boolean deleteDepartment(int id);
 }

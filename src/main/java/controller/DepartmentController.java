@@ -25,4 +25,8 @@ public class DepartmentController {
         department.setId(id);
         return departmentService.updateDepartment(department);
     }
+
+    public boolean deleteDepartment(int id) {
+        return departmentService.deleteDepartment(id);
+    }
 }

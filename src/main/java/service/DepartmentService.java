@@ -28,4 +28,9 @@ public class DepartmentService implements IDepartmentService {
     public boolean updateDepartment(Department department) {
         return departmentRepository.updateDepartment(department);
     }
+
+    @Override
+    public boolean deleteDepartment(int id) {
+        return departmentRepository.deleteDepartment(id);
+    }
 }
