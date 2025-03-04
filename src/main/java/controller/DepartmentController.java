@@ -20,4 +20,9 @@ public class DepartmentController {
     public boolean createDepartment(Department department) {
         return departmentService.createDepartment(department);
     }
+
+    public boolean updateDepartment(int id, Department department) {
+        department.setId(id);
+        return departmentService.updateDepartment(department);
+    }
 }

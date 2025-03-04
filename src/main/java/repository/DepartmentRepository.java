@@ -61,4 +61,19 @@ public class DepartmentRepository implements IDepartmentRepository {
         }
         return false;
     }
+
+    @Override
+    public boolean updateDepartment(Department department) {
+        String sql = "UPDATE Department SET DepartmentName = ? WHERE DepartmentId = ?";
+        try (Connection connection = JDBCUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, department.getName());
+            preparedStatement.setInt(2, department.getId());
+            int row = preparedStatement.executeUpdate();
+            return row > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

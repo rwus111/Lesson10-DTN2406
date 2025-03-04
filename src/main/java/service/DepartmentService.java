@@ -6,8 +6,9 @@ import repository.IDepartmentRepository;
 
 import java.util.List;
 
-public class DepartmentService implements IDepartmentService{
+public class DepartmentService implements IDepartmentService {
     private IDepartmentRepository departmentRepository = new DepartmentRepository();
+
     @Override
     public List<Department> getAllDepartments() {
         return departmentRepository.getAllDepartments();
@@ -21,5 +22,10 @@ public class DepartmentService implements IDepartmentService{
     @Override
     public boolean createDepartment(Department department) {
         return departmentRepository.createDepartment(department);
+    }
+
+    @Override
+    public boolean updateDepartment(Department department) {
+        return departmentRepository.updateDepartment(department);
     }
 }
