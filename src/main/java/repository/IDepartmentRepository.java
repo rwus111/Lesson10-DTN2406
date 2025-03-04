@@ -7,4 +7,5 @@ import java.util.List;
 public interface IDepartmentRepository {
     List<Department> getAllDepartments();
     Department getDepartmentById(int id);
+    boolean createDepartment(Department department);
 }

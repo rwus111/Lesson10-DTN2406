@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepartmentRepository implements IDepartmentRepository{
+public class DepartmentRepository implements IDepartmentRepository {
     @Override
     public List<Department> getAllDepartments() {
         List<Department> departments = new ArrayList<>();
@@ -46,5 +46,19 @@ public class DepartmentRepository implements IDepartmentRepository{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public boolean createDepartment(Department department) {
+        String sql = "INSERT INTO Department(DepartmentName) VALUES (?)";
+        try (Connection connection = JDBCUtils.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, department.getName());
+            int row = preparedStatement.executeUpdate();
+            return row > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

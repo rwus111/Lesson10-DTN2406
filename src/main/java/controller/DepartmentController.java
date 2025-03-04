@@ -16,4 +16,8 @@ public class DepartmentController {
     public Department getDepartmentById(int id) {
         return departmentService.getDepartmentById(id);
     }
+
+    public boolean createDepartment(Department department) {
+        return departmentService.createDepartment(department);
+    }
 }

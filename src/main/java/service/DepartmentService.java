@@ -17,4 +17,9 @@ public class DepartmentService implements IDepartmentService{
     public Department getDepartmentById(int id) {
         return departmentRepository.getDepartmentById(id);
     }
+
+    @Override
+    public boolean createDepartment(Department department) {
+        return departmentRepository.createDepartment(department);
+    }
 }
